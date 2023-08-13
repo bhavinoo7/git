@@ -1,0 +1,212 @@
+bhavi@Bhavin MINGW64 ~/OneDrive/Desktop/git (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+bhavi@Bhavin MINGW64 ~/OneDrive/Desktop/git (master)
+$ git config user.name
+bhavin
+
+bhavi@Bhavin MINGW64 ~/OneDrive/Desktop/git (master)
+$ git config user.email
+sorathiya@gmail.com
+
+bhavi@Bhavin MINGW64 ~/OneDrive/Desktop/git (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   bgavin.txt
+        modified:   std.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+bhavi@Bhavin MINGW64 ~/OneDrive/Desktop/git (master)
+$ git add .
+
+bhavi@Bhavin MINGW64 ~/OneDrive/Desktop/git (master)
+$ git staged commit -m
+git: 'staged' is not a git command. See 'git --help'.
+
+The most similar command is
+        stage
+
+bhavi@Bhavin MINGW64 ~/OneDrive/Desktop/git (master)
+$ git staged diff bgavin,txt
+git: 'staged' is not a git command. See 'git --help'.
+
+The most similar command is
+        stage
+
+bhavi@Bhavin MINGW64 ~/OneDrive/Desktop/git (master)
+$ git diff std,txt
+fatal: ambiguous argument 'std,txt': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
+bhavi@Bhavin MINGW64 ~/OneDrive/Desktop/git (master)
+$ git diff std.txt
+
+bhavi@Bhavin MINGW64 ~/OneDrive/Desktop/git (master)
+$ git diff --staged std.txt
+diff --git a/std.txt b/std.txt
+index b42c98d..8641e1e 100644
+--- a/std.txt
++++ b/std.txt
+@@ -1 +1 @@
+-from jamnagar sorathiya jamnaget
++from jamnagar sorathiya jamnaget sorarrrr
+
+bhavi@Bhavin MINGW64 ~/OneDrive/Desktop/git (master)
+$ git commit -m "stor"
+[master ff2511d] stor
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+
+bhavi@Bhavin MINGW64 ~/OneDrive/Desktop/git (master)
+$ git push oringin master
+fatal: 'oringin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+bhavi@Bhavin MINGW64 ~/OneDrive/Desktop/git (master)
+$ git push origin master
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 337 bytes | 337.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/bhavinoo7/bhavin.git
+   7ce2dc4..ff2511d  master -> master
+
+bhavi@Bhavin MINGW64 ~/OneDrive/Desktop/git (master)
+$ git pull origin master
+remote: Enumerating objects: 9, done.
+remote: Counting objects: 100% (9/9), done.
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (6/6), 1.35 KiB | 73.00 KiB/s, done.
+From https://github.com/bhavinoo7/bhavin
+ * branch            master     -> FETCH_HEAD
+   ff2511d..baed37c  master     -> origin/master
+Updating ff2511d..baed37c
+Fast-forward
+ bgavin.txt | 2 +-
+ std.txt    | 1 +
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+
+bhavi@Bhavin MINGW64 ~/OneDrive/Desktop/git (master)
+$ git log
+commit baed37cc63b6f10e8181c998fcbc522ee8906d97 (HEAD -> master, origin/master)
+Author: bhavinoo7 <142117033+bhavinoo7@users.noreply.github.com>
+Date:   Sun Aug 13 09:00:10 2023 +0530
+
+    Update std.txt
+
+commit e73c0af466f4fdf1f22fdf515792e0b3fdee0be3
+Author: bhavinoo7 <142117033+bhavinoo7@users.noreply.github.com>
+Date:   Sun Aug 13 08:59:47 2023 +0530
+
+    Update bgavin.txt
+
+commit ff2511dfe27e7c3cb00289c267245a2ffb097670
+Author: bhavin <sorathiya@gmail.com>
+Date:   Sun Aug 13 08:57:30 2023 +0530
+
+    stor
+
+commit 7ce2dc4252015a7fee801167d1bee33c111a875b
+Author: bhavin <sorathiya@gmail.com>
+Date:   Sun Aug 13 01:52:26 2023 +0530
+
+    sorathiya
+
+commit e4a9faa4d900d6f01cd061c808ce980982458f44
+Author: bhavinoo7 <142117033+bhavinoo7@users.noreply.github.com>
+Date:   Sun Aug 13 01:45:49 2023 +0530
+
+    Update bgavin.txt
+
+commit be7004bab9a361637d377ac482401ef301e8f23e
+Author: bhavin <sorathiya@gmail.com>
+Date:   Sun Aug 13 01:39:52 2023 +0530
+
+    first commit
+
+bhavi@Bhavin MINGW64 ~/OneDrive/Desktop/git (master)
+$ git reset std bgavin
+fatal: ambiguous argument 'std': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
+bhavi@Bhavin MINGW64 ~/OneDrive/Desktop/git (master)
+$ git reset bgavin.txt
+Unstaged changes after reset:
+M       bgavin.txt
+
+bhavi@Bhavin MINGW64 ~/OneDrive/Desktop/git (master)
+$ git checkout bgavin.txt
+Updated 1 path from the index
+
+bhavi@Bhavin MINGW64 ~/OneDrive/Desktop/git (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+bhavi@Bhavin MINGW64 ~/OneDrive/Desktop/git (master)
+$ git add .
+
+bhavi@Bhavin MINGW64 ~/OneDrive/Desktop/git (master)
+$ git add ,
+fatal: pathspec ',' did not match any files
+
+bhavi@Bhavin MINGW64 ~/OneDrive/Desktop/git (master)
+$ git add .
+
+bhavi@Bhavin MINGW64 ~/OneDrive/Desktop/git (master)
+$ git reset std.txt
+Unstaged changes after reset:
+M       std.txt
+
+bhavi@Bhavin MINGW64 ~/OneDrive/Desktop/git (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   std.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+bhavi@Bhavin MINGW64 ~/OneDrive/Desktop/git (master)
+$ git checkout std.txt
+Updated 1 path from the index
+
+bhavi@Bhavin MINGW64 ~/OneDrive/Desktop/git (master)
+$ ^C
+
+bhavi@Bhavin MINGW64 ~/OneDrive/Desktop/git (master)
+$ git checkout .
+Updated 1 path from the index
+
+bhavi@Bhavin MINGW64 ~/OneDrive/Desktop/git (master)
+$ git clone https://github.com/AnkurRanpariya2005/python-examples.git .
+fatal: destination path '.' already exists and is not an empty directory.
+
+bhavi@Bhavin MINGW64 ~/OneDrive/Desktop/git (master)
+$ git clone https://github.com/AnkurRanpariya2005/coding-interview-university.git .
+fatal: destination path '.' already exists and is not an empty directory.
+
+bhavi@Bhavin MINGW64 ~/OneDrive/Desktop/git (master)
+$ git clone https://github.com/AnkurRanpariya2005/coding-interview-university.git
+Cloning into 'coding-interview-university'...
+remote: Enumerating objects: 6055, done.
+Receiving objects: 100% (6055/6055), 15.60 MiB | 1.08 MiB/s, done.Receiving objects:  99% (5995/6055), 15.57 MiB | 1.17 MiB/s
+
+Resolving deltas: 100% (3592/3592), done.
+
+bhavi@Bhavin MINGW64 ~/OneDrive/Desktop/git (master)
+$
